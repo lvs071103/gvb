@@ -1,0 +1,22 @@
+mysql:
+  host: '10.1.32.237'
+  port: 3306
+  db: gvb_db
+  user: gvb
+  password: e2mT31xgs1eJvBYyE299xSyPBTk=
+  log_level: dev
+  max_idle: 10
+  max_open: 100
+
+logger:
+  # level: warning
+  level: info
+  prefix: '[gvb]'
+  director: log
+  show-line: true
+  log-in-console: true
+
+system:
+  host: '0.0.0.0'
+  port: 8000
+  env: dev
