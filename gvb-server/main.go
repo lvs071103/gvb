@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gvb-server/core"
 	"gvb-server/global"
+	"gvb-server/routers"
 )
 
 func main()  {
@@ -12,9 +13,11 @@ func main()  {
 	fmt.Println(global.Config)
 	// 初始化日志
 	global.Log = core.InitLogger()
-	global.Log.Warnln("嘻嘻嘻...")
-	global.Log.Errorln("嘻嘻嘻...")
-	global.Log.Infoln("嘻嘻嘻...")
 	global.DB = core.InitGorm()
 	fmt.Println(global.DB)
+	// 路由初始化
+	router := routers.InitRouter()
+	addr := global.Config.System.ServerAddr()
+	global.Log.Infof("gvb-server正在运行在：%s", addr)
+	router.Run(addr)
 }
