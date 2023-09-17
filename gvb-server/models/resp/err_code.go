@@ -1,9 +1,9 @@
 package resp
 
-type  ErrorCode int
+type ErrorCode int
 
 const (
-	SettingsError 	ErrorCode = 1001 //系统错误
+	SettingsError ErrorCode = 1001 //系统错误
 )
 
 var (
